@@ -15,9 +15,16 @@ function updateTheStuff() {
     var today = new Date();
     
     // Make the updates
-    
+
     // Hours, minutes, and seconds
     document.getElementsByClassName('hours')[0].innerText = today.getHours();
+    var minute = today.getMinutes();
+    if (minute < 10) {
+        document.getElementsByClassName('minutes')[0].innerText = "0" + toString(minute);
+    }
+    else {
+        document.getElementsByClassName('minutes')[0].innerText = minute;
+    }
     document.getElementsByClassName('minutes')[0].innerText = today.getMinutes();
     document.getElementsByClassName('seconds')[0].innerText = today.getSeconds();
 
